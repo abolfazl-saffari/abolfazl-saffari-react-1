@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+</head>
+<body>
+<table class="table">
+    <thead>
+    <tr>
+        <th>Last Name</th>
+        <th>First Name</th>
+        <th>Company Name</th>
+        <th>Phone</th>
+        <th>Work Email</th>
+        <th>Personal Email</th>
+        <th>Edit & Remove</th>
+    </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+<div style="display: none;" class="add-inputs">
+    <label>
+        <input class="lName" placeholder="Lastname..." value="">
+    </label>
+    <label>
+        <input class="fName" placeholder="Firstname..." value="">
+    </label>
+    <label>
+        <input class="cName" placeholder="Company Name..." value="">
+    </label>
+    <label>
+        <input class="phone" placeholder="Phone..." value="">
+    </label>
+    <label>
+        <input class="wEmail" placeholder="Work Email..." value="">
+    </label>
+    <label>
+        <input class="pEmail" placeholder="Personal Email..." value="">
+    </label>
+</div>
+<button style="display: none;" onclick="confirmInput()" class ="confirm" >Confirm</button>
+<button onclick="hideAndShow()" class="showHide">Show</button>
+</body>
+<script src="script.js"></script>
+</html>
