@@ -4,26 +4,46 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 </head>
 <body>
-<table id="table" class="table table-bordered">
+<table id="table">
     <thead>
     <tr>
-        <td>id</td>
-        <td>Last Name</td>
-        <td>First Name</td>
-        <td>Company Name</td>
-        <td>Phone</td>
-        <td>Work Email</td>
-        <td>Personal Email</td>
+        <th>Last Name</th>
+        <th>First Name</th>
+        <th>Company Name</th>
+        <th>Phone</th>
+        <th>Work Email</th>
+        <th>Personal Email</th>
+        <th>Edit & Remove</th>
     </tr>
     </thead>
-    <tbody></tbody>
+    <tbody>
+
+    </tbody>
 </table>
-<button>Add</button>
-<button>Rename</button>
-<button>Remove</button>
+<div style="display: none;" class="add-inputs">
+    <label>
+        <input class="lName" placeholder="Lastname..." value="">
+    </label>
+    <label>
+        <input class="fName" placeholder="Firstname..." value="">
+    </label>
+    <label>
+        <input class="cName" placeholder="Company Name..." value="">
+    </label>
+    <label>
+        <input class="phone" placeholder="Phone..." value="">
+    </label>
+    <label>
+        <input class="wEmail" placeholder="Work Email..." value="">
+    </label>
+    <label>
+        <input class="pEmail" placeholder="Personal Email..." value="">
+    </label>
+</div>
+<button style="display: none;" onclick="addStaff()" class ="confirm" >Confirm</button>
+<button onclick="hideAndShow()" class="showHide">Show</button>
 </body>
 <script src="script.js"></script>
 </html>
