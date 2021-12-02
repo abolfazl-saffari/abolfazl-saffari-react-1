@@ -55,9 +55,9 @@ function resetValue() {
     pEmail.value = ''
 }
 
-function removeStaff(id) {
+function removeStaff(lastName) {
     staffs = staffs.filter(function (staff) {
-        return staff.id !== id
+        return staff.id !== lastName
     });
     renderTable();
 }
@@ -70,29 +70,40 @@ function updateStaff(id, newStaff) {
 }
 
 function renderTable() {
-    let tbody = document.getElementsByTagName('tbody')[0]
-    let row = document.createElement('tr')
-    let td1 = document.createElement('td')
-    let td2 = document.createElement('td')
-    let td3 = document.createElement('td')
-    let td4 = document.createElement('td')
-    let td5 = document.createElement('td')
-    let td6 = document.createElement('td')
-    let td7 = document.createElement('td')
-    let button01 = document.createElement("button")
-    button01.innerHTML = 'edit'
-    let button02 = document.createElement('button')
-    button02.innerHTML = 'remove'
+    let valid = lName.value === '' || fName.value === '' || cName.value === '' || phone.value === '' || wEmail.value === '' || pEmail.value === ''
+    if (valid) {
 
-    staffs.forEach(function (staff) {
-        td1.innerHTML = staff.lastName
-        td2.innerHTML = staff.firstName
-        td3.innerHTML = staff.companyName
-        td4.innerHTML = staff.phone
-        td5.innerHTML = staff.workEmail
-        td6.innerHTML = staff.personalEmail
-    })
-    td7.append(button01, button02)
-    row.append(td1, td2, td3, td4, td5, td6, td7)
-    tbody.appendChild(row)
+        let tbody = document.getElementsByTagName('tbody')[0]
+        let row = document.createElement('tr')
+        let td1 = document.createElement('td')
+        let td2 = document.createElement('td')
+        let td3 = document.createElement('td')
+        let td4 = document.createElement('td')
+        let td5 = document.createElement('td')
+        let td6 = document.createElement('td')
+        let td7 = document.createElement('td')
+        let button01 = document.createElement("button")
+        button01.innerHTML = 'edit'
+        let button02 = document.createElement('button')
+        button02.innerHTML = 'remove'
+        function rowRemover(){
+            row.remove()
+        }
+        button02.addEventListener('click',function(){
+            row.remove()
+        })
+        // حواست به lastName باشه
+
+        staffs.forEach(function (staff) {
+            td1.innerHTML = staff.lastName
+            td2.innerHTML = staff.firstName
+            td3.innerHTML = staff.companyName
+            td4.innerHTML = staff.phone
+            td5.innerHTML = staff.workEmail
+            td6.innerHTML = staff.personalEmail
+        })
+        td7.append(button01, button02)
+        row.append(td1, td2, td3, td4, td5, td6, td7)
+        tbody.appendChild(row)
+    }
 }
